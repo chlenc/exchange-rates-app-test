@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:hello_world/Data.dart';
+import 'package:hello_world/HexColor.dart';
 import 'dart:convert';
 
 class ValutesList extends StatefulWidget {
@@ -21,10 +22,12 @@ class ValutesListState extends State<ValutesList> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Курс валют"),
-        
-      ),
+      appBar: new AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
+          title: const Text('Курс валют', style: TextStyle(color: Color(0xFF17171A))),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+        ),
       body: Container(child: ListView(children: _buildList())),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
